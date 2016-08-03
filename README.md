@@ -32,15 +32,24 @@ iex -S mix
 ## Examples
 
 Every call to Travis needs a client. It can optionally have a travis token associated with it, which is necessary for
-private repositories. Below are some examples
+private repositories. If you don't provide one a client is created. Below are some examples:
 
-*Describe a repo*
+*Describe a public repo*
 
 ```elixir
 iex> Travis.Repos.show("elixir-lang", "elixir")
-%{"repo" => %{"active" => true,
-    "description" => "Elixir is a dynamic, functional language designed for building scalable and maintainable applications",
-    "slug" => "elixir-lang/elixir"}}
+%{"repo" => %{...}}
+```
+
+*Describe a private repo*
+
+```elixir
+iex> client = Travis.Client.new(token)
+%Travis.Client{endpoint: "https://api.travis-ci.com/",
+ token: "..."}
+
+iex> Travis.Repos.show("localytics", "travis.ex", client)
+%{"repo" => %{...}}
 ```
 
 *List builds for a repo*
