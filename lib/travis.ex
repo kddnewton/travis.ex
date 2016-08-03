@@ -3,7 +3,7 @@ defmodule Travis do
 
   @headers [{"User-Agent", "Travis.ex/0.0.1"}, {"Accept", "application/vnd.travis-ci.2+json"}]
 
-  @type response :: {integer, any} | :jsx.json_term
+  @type response :: {integer, String.t} | :jsx.json_term
 
   @spec delete(binary, Client.t) :: response
   def delete(path, client, params \\ []), do: :delete |> request(path, client, params)
@@ -25,9 +25,9 @@ defmodule Travis do
     url |> URI.parse |> merge_params(params) |> String.Chars.to_string
   end
 
-  @spec headers(Client.t) :: list
-  defp headers(_client = %Client{token: token}) when is_nil(token), do: @headers
-  defp headers(_client = %Client{token: token}), do: [{"Authorization", "token #{token}"} | @headers]
+  @spec headers(Client.t) :: [{String.t, String.t}]
+  defp headers(%Client{token: token}) when is_nil(token), do: @headers
+  defp headers(%Client{token: token}), do: [{"Authorization", "token #{token}"} | @headers]
 
   @spec merge_params(URI.t, list) :: URI.t
   defp merge_params(uri, []), do: uri
@@ -38,7 +38,7 @@ defmodule Travis do
     uri |> Map.update!(:query, fn q -> q |> URI.decode_query |> Map.merge(param_map(params)) |> URI.encode_query end)
   end
 
-  @spec request(atom, binary, Client.t, list) :: response
+  @spec request(:delete | :get | :patch | :post | :put, binary, Client.t, list) :: response
   defp request(method, path, client, params) do
     uri = client |> url(path) |> add_params(params)
     HTTPoison.request!(method, uri, "", client |> headers) |> process
