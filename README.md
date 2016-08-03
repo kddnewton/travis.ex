@@ -1,5 +1,7 @@
 # travis.ex
 
+[![Build Status](https://travis-ci.com/localytics/travis.ex.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/travis.ex)
+
 Simple Elixir wrapper for the Travis API.
 
 ## Quickstart
