@@ -38,11 +38,7 @@ private repositories. Below are some examples
 iex> Travis.Repos.show("elixir-lang", "elixir")
 %{"repo" => %{"active" => true,
     "description" => "Elixir is a dynamic, functional language designed for building scalable and maintainable applications",
-    "github_language" => nil, "id" => 8688, "last_build_duration" => nil,
-    "last_build_finished_at" => nil, "last_build_id" => 149549230,
-    "last_build_language" => nil, "last_build_number" => "11638",
-    "last_build_started_at" => "2016-08-03T18:21:07Z",
-    "last_build_state" => "started", "slug" => "elixir-lang/elixir"}}
+    "slug" => "elixir-lang/elixir"}}
 ```
 
 *List builds for a repo*
