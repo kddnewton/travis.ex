@@ -1,6 +1,6 @@
 # travis.ex
 
-[![Build Status](https://travis-ci.com/localytics/travis.ex.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/travis.ex)
+[![Build Status](https://travis-ci.org/localytics/travis.ex.svg?branch=master)](https://travis-ci.org/localytics/travis.ex)
 [![Hex.pm](https://img.shields.io/hexpm/v/travis.svg)](https://hex.pm/packages/travis)
 
 Simple Elixir wrapper for the Travis API.
