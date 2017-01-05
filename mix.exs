@@ -22,7 +22,8 @@ defmodule Travis.Mixfile do
   defp deps do
     [ {:httpoison, "~> 0.8"},
       {:exjsx, "~> 3.2"},
-      {:dialyxir, "~> 0.3.5", only: [:dev]} ]
+      {:dialyxir, "~> 0.3.5", only: [:dev]},
+      {:ex_doc, ">= 0.0.0", only: [:dev]} ]
   end
 
   defp package do
