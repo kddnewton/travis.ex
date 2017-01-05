@@ -26,6 +26,7 @@ defmodule Travis.Mixfile do
   end
 
   defp package do
-    [ links: %{ "Github" => "https://github.com/localytics/travis.ex" } ]
+    [ links: %{ "Github" => "https://github.com/localytics/travis.ex" },
+      licenses: ["MIT"] ]
   end
 end
