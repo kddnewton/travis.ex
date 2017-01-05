@@ -4,6 +4,6 @@ defmodule Travis.AccountsTest do
   @client Travis.Client.new(System.get_env("TRAVIS_TOKEN"))
 
   test "#list" do
-    %{"accounts" => [%{"id" => _id}]} = Travis.Accounts.list(@client)
+    %{"accounts" => [%{"id" => _id} | _tail]} = Travis.Accounts.list(@client)
   end
 end
