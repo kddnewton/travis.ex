@@ -1,6 +1,6 @@
 # travis.ex
 
-[![Build Status](https://travis-ci.org/localytics/travis.ex.svg?branch=master)](https://travis-ci.org/localytics/travis.ex)
+[![Build Status](https://travis-ci.com/kddeisz/travis.ex.svg?branch=master)](https://travis-ci.com/kddeisz/travis.ex)
 [![Hex.pm](https://img.shields.io/hexpm/v/travis.svg)](https://hex.pm/packages/travis)
 
 Simple Elixir wrapper for the Travis API.
@@ -49,7 +49,7 @@ iex> client = Travis.Client.new(token)
 %Travis.Client{endpoint: "https://api.travis-ci.com/",
  token: "..."}
 
-iex> Travis.Repos.show("localytics", "travis.ex", client)
+iex> Travis.Repos.show("kddeisz", "travis.ex", client)
 %{"repo" => %{...}}
 ```
 
@@ -62,4 +62,8 @@ iex> Travis.Repos.Builds.list("elixir-lang", "elixir")
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/localytics/travis.ex.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/travis.ex.
+
+## License
+
+The code is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
